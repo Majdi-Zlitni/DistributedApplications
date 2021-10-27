@@ -4,7 +4,7 @@ import java.net.Socket;
 public class Server {
 	public static void main(String[] args) {
 		try {
-			ServerSocket s = new ServerSocket(2025);
+			ServerSocket s = new ServerSocket(2022);
 			while(true) {
 		
 					Socket ss= s.accept();
