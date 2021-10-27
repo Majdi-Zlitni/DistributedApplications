@@ -4,12 +4,12 @@ import java.net.Socket;
 public class Server {
 	public static void main(String[] args) {
 		try {
-			ServerSocket s = new ServerSocket(2022);
+			ServerSocket ss = new ServerSocket(2022);
 			while(true) {
 		
-					Socket ss= s.accept();
-					Threadread r= new Threadread(ss);
-					Threadwrite w= new Threadwrite(ss);
+					Socket s= ss.accept();
+					Threadread r= new Threadread(s);
+					Threadwrite w= new Threadwrite(s);
 					r.start();
 					w.start();
 				

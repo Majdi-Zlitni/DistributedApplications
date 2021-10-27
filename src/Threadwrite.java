@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Threadwrite extends Thread {
 	Socket s;
 	PrintWriter pw;
-	public Threadwrite(Socket s) {
-		this.s=s;
+	public Threadwrite(Socket socket) {
+		s=socket;
 		try {
 			pw=new PrintWriter(s.getOutputStream());
 		}catch(IOException e) {
