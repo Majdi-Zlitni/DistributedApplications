@@ -11,11 +11,11 @@ public static void main(String[] args) {
 		while(true) {//el server bch ya9bel barcha clients heka aaleh aamelna boucle for
 			Socket socket= server.accept();
 			System.out.println(socket.getPort()+" connecté");//bch ygolena ely el port kedha raw conected 
-			InputStream in =socket.getInputStream();//bch nhoto el données ely jayin men aadn el client sous forme d'octet
-			InputStreamReader reader = new InputStreamReader(in);//bch na9rohom bel charachter bel charachter
-			BufferedReader istream= new BufferedReader(reader);//convertion en flux manipulant chaine de charactères
+			InputStream input =socket.getInputStream();//bch nhoto el données ely jayin men aadn el client sous forme d'octet
+			InputStreamReader reader = new InputStreamReader(input);//bch na9rohom bel charachter bel charachter
+			BufferedReader br= new BufferedReader(reader);//convertion en flux manipulant chaine de charactères
 			while(true) {//boucle pour l'echange de plusieur msg avec meme client
-				String line= istream.readLine();//lehna tssir el recupération de donnée envoyer par le client
+				String line= br.readLine();//lehna tssir el recupération de donnée envoyer par le client
 				System.out.println("Majdi a dit: "+line);
 				if(line.equals("fin")) {
 					socket.close();
