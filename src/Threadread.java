@@ -5,8 +5,8 @@ import java.net.Socket;
 public class Threadread extends Thread {
 Socket s;
 BufferedReader br;// reading text from a character input stream
-public Threadread(Socket socket) {
-	s=socket;
+public Threadread(Socket s) {
+	this.s=s;
 	try {
 		br=new BufferedReader(new InputStreamReader(s.getInputStream()));//fi el variable mtaa el buffer reader bch nhoto ely bch na9rouh mel socket
 		
